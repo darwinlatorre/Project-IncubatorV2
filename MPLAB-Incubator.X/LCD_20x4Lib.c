@@ -7,7 +7,8 @@
 
 #include "LCD_20x4Lib.h"
 
-void LCD_Cmd(char prm_out_char) {
+void LCD_Cmd(char prm_out_char) 
+{
     LCD_RS = 0;
 
     LCD_D4 = (prm_out_char & 0x10)?1:0;
@@ -25,7 +26,7 @@ void LCD_Cmd(char prm_out_char) {
     if(prm_out_char == 0x01)delay_ms(2);
 }
 
-void LCD_Clear ( void)
+void LCD_Clear( void)
 {
     LCD_Cmd(_LCD_CLEAR);
 }
@@ -62,7 +63,7 @@ void LCD_ConfChar(char prmRow, char prmColumn, char prm_out_char)
     LCD_STROBE
 }
 
-void LCD_Init () 
+void LCD_Init() 
 {
     delay_ms(200);
 
@@ -109,7 +110,8 @@ void LCD_Init ()
     LCD_Cmd(_LCD_CURSOR_OFF);
 }
 
-void LCD_XY_CHAR(char varRow, char prmColumn, char *prmText) {
+void LCD_XY_CHAR(char varRow, char prmColumn, char *prmText) 
+{
     while(*prmText)
          LCD_ConfChar(varRow, prmColumn++, *prmText++);
 }

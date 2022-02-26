@@ -1,5 +1,5 @@
 /* 
- * File:   BITS_Configuration.h
+ * File:   adds.h
  * Author:  Darwin Latorre
  * Comments: Configuracion de bits
  */

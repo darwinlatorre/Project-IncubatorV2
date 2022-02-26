@@ -4,8 +4,8 @@
  * Comments: Configuracion del lcd 20x4
  */
  
-#ifndef XC_LCD_20x4_H
-#define	XC_LCD_20x4_H
+#ifndef XC_LCD_20x4Lib_H
+#define	XC_LCD_20x4Lib_H
 
 #include "BITS_Configuration.h"
 #include "adds.h"
@@ -51,15 +51,15 @@
 
 void LCD_Cmd(char prm_out_char);
 
-void LCD_Clear ( void);
+void LCD_Clear( void);
 
 void LCD_ConfChar(char prmRow, char prmColumn, char prm_out_char);
 
-void LCD_Init ();
+void LCD_Init();
 
 void LCD_XY_CHAR(char varRow, char prmColumn, char *prmText);
 
 
-#endif   /* XC_LCD_20x4_H */
+#endif   /* XC_LCD_20x4Lib_H */
 
 
