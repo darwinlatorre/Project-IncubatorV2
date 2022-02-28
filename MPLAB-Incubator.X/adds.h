@@ -9,8 +9,6 @@
 #ifndef XC_ADDS_H
 #define	XC_ADDS_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
-
 //Renombrado
 #define delay_ms(x)	__delay_ms(x)
 #define delay_us(x)	__delay_us(x)

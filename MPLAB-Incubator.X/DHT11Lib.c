@@ -40,7 +40,7 @@ int DHT11_Read_Bytes(void)
     return varData;
 }
 
-short DHT11_Read_Data(float *tem, float *hum)
+short DHT11_Read_Data(int *tem, int *hum)
 {
     int temp = 0;
     int info[5];
@@ -53,8 +53,10 @@ short DHT11_Read_Data(float *tem, float *hum)
     info[3] = DHT11_Read_Bytes();   // Temp decimal
     info[4] = DHT11_Read_Bytes();   // Paridad
     
-    *hum = (float)((DHT11_Join_Data(info[0], info[1])) / 10.0f);
-    *tem = (float)((DHT11_Join_Data(info[2], info[3])) / 10.0f);
+    //*hum = (float)((DHT11_Join_Data(info[0], info[1])) / 10.0f);
+    *hum = info[0];
+    //*tem = (float)((DHT11_Join_Data(info[2], info[3])) / 10.0f);
+    *tem = info[2];
     temp = info[0] + info[1] + info[2] + info[3];
     
     if(temp == info[4]){
@@ -64,10 +66,10 @@ short DHT11_Read_Data(float *tem, float *hum)
    }
 }
 
-unsigned DHT11_Join_Data(unsigned h, unsigned l)
-{
-    unsigned pow = 10;
-    while(l >= pow)
-        pow *= 10;
-    return h * pow + l;        
-}
+//unsigned DHT11_Join_Data(unsigned h, unsigned l)
+//{
+//    unsigned pow = 10;
+//    while(l >= pow)
+//        pow *= 10;
+//    return h * pow + l;        
+//}

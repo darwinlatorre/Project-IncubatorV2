@@ -15,13 +15,13 @@ void LCD_Cmd(char prm_out_char)
     LCD_D5 = (prm_out_char & 0x20)?1:0;
     LCD_D6 = (prm_out_char & 0x40)?1:0;
     LCD_D7 = (prm_out_char & 0x80)?1:0;
-    LCD_STROBE
+    LCD_STROBE;
 
     LCD_D4 = (prm_out_char & 0x01)?1:0;
     LCD_D5 = (prm_out_char & 0x02)?1:0;
     LCD_D6 = (prm_out_char & 0x04)?1:0;
     LCD_D7 = (prm_out_char & 0x08)?1:0;
-    LCD_STROBE
+    LCD_STROBE;
 
     if(prm_out_char == 0x01)delay_ms(2);
 }
@@ -54,13 +54,13 @@ void LCD_ConfChar(char prmRow, char prmColumn, char prm_out_char)
     LCD_D5 = (prm_out_char & 0x20)?1:0;
     LCD_D6 = (prm_out_char & 0x40)?1:0;
     LCD_D7 = (prm_out_char & 0x80)?1:0;
-    LCD_STROBE
+    LCD_STROBE;
 
     LCD_D4 = (prm_out_char & 0x01)?1:0;
     LCD_D5 = (prm_out_char & 0x02)?1:0;
     LCD_D6 = (prm_out_char & 0x04)?1:0;
     LCD_D7 = (prm_out_char & 0x08)?1:0; 
-    LCD_STROBE
+    LCD_STROBE;
 }
 
 void LCD_Init() 
@@ -108,6 +108,7 @@ void LCD_Init()
     LCD_Cmd(0x28);
     LCD_Cmd(0x06);
     LCD_Cmd(_LCD_CURSOR_OFF);
+    
 }
 
 void LCD_XY_CHAR(char varRow, char prmColumn, char *prmText) 

@@ -47,7 +47,7 @@
 #define LCD_D7_Direction TRISDbits.TRISD7
 
 #define EN_DELAY 200
-#define LCD_STROBE {LCD_EN = 1; __delay_us(EN_DELAY); LCD_EN = 0; __delay_us(EN_DELAY);};
+#define LCD_STROBE {LCD_EN = 1; delay_us(EN_DELAY); LCD_EN = 0; delay_us(EN_DELAY);};
 
 void LCD_Cmd(char prm_out_char);
 
@@ -61,5 +61,3 @@ void LCD_XY_CHAR(char varRow, char prmColumn, char *prmText);
 
 
 #endif   /* XC_LCD_20x4Lib_H */
-
-
