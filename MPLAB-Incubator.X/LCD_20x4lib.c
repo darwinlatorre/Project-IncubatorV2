@@ -85,25 +85,25 @@ void LCD_Init()
     LCD_D5 = 1;
     LCD_D6 = 0;
     LCD_D7 = 0;
-    LCD_STROBE
+    LCD_STROBE;
     delay_ms(30);
     LCD_D4 = 1;
     LCD_D5 = 1;
     LCD_D6 = 0;
     LCD_D7 = 0;
-    LCD_STROBE
+    LCD_STROBE;
     delay_ms(30);
     LCD_D4 = 1;
     LCD_D5 = 1;
     LCD_D6 = 0;
     LCD_D7 = 0;
-    LCD_STROBE
+    LCD_STROBE;
     delay_ms(30);
     LCD_D4 = 0;
     LCD_D5 = 1;
     LCD_D6 = 0;
     LCD_D7 = 0;
-    LCD_STROBE
+    LCD_STROBE;
     delay_ms(30);
     LCD_Cmd(0x28);
     LCD_Cmd(0x06);
@@ -116,3 +116,4 @@ void LCD_XY_CHAR(char varRow, char prmColumn, char *prmText)
     while(*prmText)
          LCD_ConfChar(varRow, prmColumn++, *prmText++);
 }
+

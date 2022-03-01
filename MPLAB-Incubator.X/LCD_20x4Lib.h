@@ -7,8 +7,7 @@
 #ifndef XC_LCD_20x4Lib_H
 #define	XC_LCD_20x4Lib_H
 
-#include "BITS_Configuration.h"
-#include "adds.h"
+#include "Coleccion.h"
 
 #define _LCD_FIRST_ROW          0x80     //Mueve el cursor a la 1ra columna
 #define _LCD_SECOND_ROW         0xC0     //Mueve el cursor a la 2da columna

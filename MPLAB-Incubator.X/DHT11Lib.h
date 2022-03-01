@@ -7,10 +7,7 @@
 #ifndef XC_DHT11Lib_H
 #define	XC_DHT11Lib_H
 
-#include "BITS_Configuration.h"
-#include "adds.h"
-
-#define _XTAL_FREQ 8000000
+#include "Coleccion.h"
 
 #define DHT11_PIN_PORT 	PORTBbits.RB7
 #define DHT11_PIN_LAT 	LATBbits.LB7

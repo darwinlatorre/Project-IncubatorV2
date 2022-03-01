@@ -7,7 +7,8 @@
       <itemPath>LCD_20x4Lib.h</itemPath>
       <itemPath>BITS_Configuration.h</itemPath>
       <itemPath>DHT11Lib.h</itemPath>
-      <itemPath>adds.h</itemPath>
+      <itemPath>Coleccion.h</itemPath>
+      <itemPath>Buttons_Conf.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

@@ -76,8 +76,4 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-#include <xc.h>
-
-#define _XTAL_FREQ 8000000          // Definimos la velocidad del oscilador a 8MHz.
-
 #endif	/* XC_BITS_CONFIGURATION_H */

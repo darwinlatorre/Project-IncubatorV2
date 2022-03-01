@@ -5,11 +5,7 @@
  * Created on February 25, 2022, 11:53 PM
  */
 
-#include "BITS_Configuration.h"
-#include "LCD_20x4Lib.h"
-#include "DHT11Lib.h"
-#include <stdint.h>
-#include <stdio.h>
+#include "Coleccion.h"
 
 void main(void) 
 {
@@ -19,9 +15,6 @@ void main(void)
     int varCurrentHum;
     int varUserTemp = 30, varUserHum = 20;
     
-    ADCON1bits.PCFG = 0x0F;             // Coloca todos los pines como digitales
-    
-    PORTD=0x00;
     
     LCD_Init();
     LCD_Clear();
@@ -56,6 +49,7 @@ void main(void)
             LCD_XY_CHAR(3, 1, "      Error...      ");
             LCD_XY_CHAR(4, 1, "--------------------");
         }
+        
     }
     delay_ms(1000);
     return;
