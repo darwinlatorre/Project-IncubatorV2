@@ -24,29 +24,29 @@ void main(void)
     PORTD=0x00;
     
     LCD_Init();
-    //LCD_XY_CHAR(1, 1, "   PRJ.Incubator    ");
-    //LCD_XY_CHAR(2, 1, "    Bienvenido...   ");
-    //LCD_XY_CHAR(3, 1, "   MC: PIC18F4550   ");
-    //LCD_XY_CHAR(4, 1, " By: Darwin Latorre ");
-    //delay_ms(500);
     LCD_Clear();
 
+    LCD_XY_CHAR(1, 1, "       Estado:      ");
+    LCD_XY_CHAR(2, 1, "Temp:");
+    LCD_XY_CHAR(2, 12, "Hum:");
+    LCD_XY_CHAR(3, 1, "   Configuracion:   ");
+    LCD_XY_CHAR(4, 1, "Temp:");
+    LCD_XY_CHAR(4, 12, "Hum:");
+    
     while(1)
     {
         DHT_State = DHT11_Read_Data(&varCurrentTemp, &varCurrentHum);
         
         if(DHT_State == 1)
         {
-            LCD_XY_CHAR(1, 1, "       Estado:      ");
-            sprintf(LCD_Buffer, "Temp:%02dC ", varCurrentTemp);
-            LCD_XY_CHAR(2, 1, LCD_Buffer);
-            sprintf(LCD_Buffer, "Hum:%02d%", varCurrentHum);
-            LCD_XY_CHAR(2, 12, LCD_Buffer);
-            LCD_XY_CHAR(3, 1, "   Configuracion:   ");
-            sprintf(LCD_Buffer, "Temp: %02dC", varUserTemp);
-            LCD_XY_CHAR(4, 1, LCD_Buffer);
-            sprintf(LCD_Buffer, "Hum: %02d%", varUserHum);
-            LCD_XY_CHAR(4, 12, LCD_Buffer);
+            sprintf(LCD_Buffer, "%02d C", varCurrentTemp);
+            LCD_XY_CHAR(2, 6, LCD_Buffer);
+            sprintf(LCD_Buffer, "%02d%%", varCurrentHum);
+            LCD_XY_CHAR(2, 16, LCD_Buffer);
+            sprintf(LCD_Buffer, "%02d C", varUserTemp);
+            LCD_XY_CHAR(4, 6, LCD_Buffer);
+            sprintf(LCD_Buffer, "%02d%%", varUserHum);
+            LCD_XY_CHAR(4, 16, LCD_Buffer);
         }
         else
         {
